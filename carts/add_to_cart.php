@@ -24,7 +24,7 @@ if(!$saved_cart_items){
 // check if the item is in the array, if it is, do not add
 if(array_key_exists($id, $saved_cart_items)){
     // redirect to product list and tell the user it was added to cart
-    header('Location: product.php?id=' . $id . '&action=exists');
+    header('Location: ./../products/product.php?id=' . $id . '&action=exists');
 }
  
 // else, add the item to the array
@@ -45,7 +45,7 @@ else{
     $_COOKIE['cart_items_cookie']=$json;
  
     // redirect to product list and tell the user it was added to cart
-    header('Location: product.php?id=' . $id . '&action=added');
+    header('Location: ./../products/product.php?id=' . $id . '&action=added');
 }
 die();
 ?>

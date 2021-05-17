@@ -277,28 +277,5 @@
             return $stmt;
         }
     
-        function readOne(){
-            $query = "SELECT name, description, price FROM " . $this->table_name . "
-                    WHERE
-                        id = ?
-                    LIMIT
-                        0,1";
-         
-            $stmt = $this->conn->prepare( $query );
-         
-            // To sanitize the input
-            $this->id=htmlspecialchars(strip_tags($this->id));
-         
-            // bind product id value
-            $stmt->bindParam(1, $this->id);
-         
-            $stmt->execute();
-         
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-         
-            $this->name = $row['name'];
-            $this->description = $row['description'];
-            $this->price = $row['price'];
-        }
     }
 ?>

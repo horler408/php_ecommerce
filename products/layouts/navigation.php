@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./products.php">HorlerTech Store</a>
+            <a class="navbar-brand" href="./../products/products.php">HorlerTech Store</a>
         </div>
  
         <div class="navbar-collapse collapse">
@@ -17,7 +17,7 @@
  
                 <!-- highlight if $page_title has 'Products' word. -->
                 <li <?php echo strpos($page_title, "Product")!==false ? "class='active dropdown'" : "class='dropdown'"; ?>>
-                    <a href="./products.php">Products</a>
+                    <a href="./../products/products.php">Products</a>
                 </li>
  
                 <li <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >

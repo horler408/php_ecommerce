@@ -11,9 +11,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen" />
  
-    <!-- admin custom CSS -->
     <link href="<?php echo $home_url . "libs/css/style.css" ?>" rel="stylesheet" />
-    <!-- <link href="./libs/css/style.css" rel="stylesheet" /> -->
+
+    <!-- custom css for users -->
+    <link href="./../libs/css/style.css" rel="stylesheet" media="screen">
  
 </head>
 <body>

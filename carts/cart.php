@@ -5,11 +5,12 @@ $cookie = stripslashes($cookie);
 $saved_cart_items = json_decode($cookie, true);
  
 // connect to database
-include 'config/database.php';
+include './../config/database.php';
+include './../config/core.php';
  
 // include objects
-include_once "objects/product.php";
-include_once "objects/product_image.php";
+include_once "./../objects/product.php";
+include_once "./../objects/product_image.php";
  
 // get database connection
 $database = new Database();
@@ -23,7 +24,7 @@ $product_image = new ProductImage($db);
 $page_title="Cart";
  
 // include page header html
-include 'layout_head.php';
+include './../products/layouts/header.php';
  
 // contents will be here 
 $action = isset($_GET['action']) ? $_GET['action'] : "";
@@ -95,7 +96,7 @@ if(count($saved_cart_items)>0){
                 echo "</form>";
  
                 // delete from cart
-                echo "<a href='remove_from_cart.php?id={$id}' class='btn btn-default'>";
+                echo "<a href='./remove_from_cart.php?id={$id}' class='btn btn-default'>";
                     echo "Delete";
                 echo "</a>";
             echo "</div>";
@@ -115,7 +116,7 @@ if(count($saved_cart_items)>0){
         echo "<div class='cart-row'>";
             echo "<h4 class='m-b-10px'>Total ({$item_count} items)</h4>";
             echo "<h4>$" . number_format($total, 2, '.', ',') . "</h4>";
-            echo "<a href='checkout.php' class='btn btn-success m-b-10px'>";
+            echo "<a href='./checkout.php' class='btn btn-success m-b-10px'>";
                 echo "<span class='glyphicon glyphicon-shopping-cart'></span> Proceed to Checkout";
             echo "</a>";
         echo "</div>";
@@ -131,5 +132,5 @@ else{
 }
  
 // layout footer 
-include 'layout_foot.php';
+include './../products/layouts/footer.php';
 ?>

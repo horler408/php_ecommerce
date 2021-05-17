@@ -9,6 +9,7 @@ $saved_cart_items = $saved_cart_items == null ? array() : $saved_cart_items;
  
 // connect to database
 include './../config/database.php';
+include_once "./../config/core.php";
  
 // include objects
 include_once "./../objects/product.php";
@@ -65,7 +66,7 @@ if($num>0){
     $total_rows=$product->count();
  
     // show products
-    include_once "products_template.php";
+    include_once "./products_template.php";
 }
  
 // tell the user if there's no products in the database
