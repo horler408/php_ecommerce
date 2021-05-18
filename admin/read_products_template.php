@@ -12,7 +12,7 @@ echo "</form>";
   
 // Create product button
 echo "<div class='right-button-margin'>";
-    echo "<a href='create.php' class='btn btn-primary pull-right'>";
+    echo "<a href='./crud_product/create_product.php' class='btn btn-primary pull-right m-b-1em'>";
         echo "<span class='glyphicon glyphicon-plus'></span> Create Product";
     echo "</a>";
 echo "</div>";
@@ -35,7 +35,7 @@ if($total_rows>0){
   
             echo "<tr>";
                 echo "<td>{$name}</td>";
-                echo "<td>{$price}</td>";
+                echo "<td>$ {$price}</td>";
                 echo "<td>{$description}</td>";
                 echo "<td>";
                     $category->id = $category_id;
@@ -46,24 +46,23 @@ if($total_rows>0){
                 echo "<td>";
   
                     // Index button
-                    echo "<a href='./product_crud/read_product.php?id={$id}' class='btn btn-primary left-margin'>";
+                    echo "<a href='./product_crud/read_product.php?id={$id}' class='btn btn-primary m-r-1em m-b-1em'>";
                         echo "<span class='glyphicon glyphicon-list'></span> Read";
                     echo "</a>";
   
                     // Update product button
-                    echo "<a href='./product_crud/update.php?id={$id}' class='btn btn-info left-margin'>";
+                    echo "<a href='./product_crud/update.php?id={$id}' class='btn btn-info m-r-1em m-b-1em'>";
                         echo "<span class='glyphicon glyphicon-edit'></span> Edit";
                     echo "</a>";
   
                     // Delete product button
-                    echo "<a delete-id='{$id}' class='btn btn-danger delete-object'>";
+                    echo "<a delete-id='{$id}' class='btn btn-danger delete-object m-b-1em'>";
                         echo "<span class='glyphicon glyphicon-remove'></span> Delete";
                     echo "</a>";
   
                 echo "</td>";
   
             echo "</tr>";
-  
         }
   
     echo "</table>";

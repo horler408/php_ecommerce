@@ -29,6 +29,10 @@
                         echo $page_title=="Users" ? "class='active'" : ""; ?> >
                     <a href="<?php echo $home_url; ?>admin/read_users.php">Users</a>
                 </li>
+                <li <?php
+                        echo $page_title=="Users" ? "class=''" : ""; ?> >
+                    <a href="<?php echo $home_url; ?>admin/read_products.php">Products</a>
+                </li>
             </ul>
  
             <!-- options in the upper right corner of the page -->
