@@ -23,7 +23,7 @@ $product->id = $id;
 $product->readOne();
 
 // set page headers
-$page_title = "Read One Product";
+$page_title = "Read Single Product";
 include_once "./../layouts/header.php";
   
 // Home page button
@@ -55,7 +55,7 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
         echo "<td>Category</td>";
         echo "<td>";
             // display category name
-            $category->id=$product->category_id;
+            $category->id = $product->category_id;
             $category->readName();
             echo $category->name;
         echo "</td>";
@@ -64,7 +64,7 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
     echo "<tr>";
         echo "<td>Image</td>";
         echo "<td>";
-            echo $product->image ? "<img src='uploads/{$product->image}' style='width:300px;' />" : "No image found.";
+            echo $product->image ? "<img src='uploads/{$product->image}' alt='The product image' style='width:300px;' />" : "No image found.";
         echo "</td>";
     echo "</tr>";
   

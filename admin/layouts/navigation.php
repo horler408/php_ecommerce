@@ -1,3 +1,4 @@
+<?php //session_start(); ?>
 <!-- navbar -->
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container-fluid">

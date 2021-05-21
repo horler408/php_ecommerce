@@ -9,10 +9,10 @@ echo "<form role='search' action='search.php'>";
         echo "</div>";
     echo "</div>";
 echo "</form>";
-  
+
 // Create product button
 echo "<div class='right-button-margin'>";
-    echo "<a href='./crud_product/create_product.php' class='btn btn-primary pull-right m-b-1em'>";
+    echo "<a href='./product_crud/create_product.php' class='btn btn-primary pull-right m-b-1em'>";
         echo "<span class='glyphicon glyphicon-plus'></span> Create Product";
     echo "</a>";
 echo "</div>";
@@ -51,7 +51,7 @@ if($total_rows>0){
                     echo "</a>";
   
                     // Update product button
-                    echo "<a href='./product_crud/update.php?id={$id}' class='btn btn-info m-r-1em m-b-1em'>";
+                    echo "<a href='./product_crud/update_product.php?id={$id}' class='btn btn-info m-r-1em m-b-1em'>";
                         echo "<span class='glyphicon glyphicon-edit'></span> Edit";
                     echo "</a>";
   

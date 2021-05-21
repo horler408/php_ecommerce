@@ -1,8 +1,11 @@
 <?php
-// include database and object files
-include_once 'config/database.php';
-include_once 'objects/product.php';
-include_once 'objects/category.php';
+// To include database and core configuration
+include_once './../../config/database.php';
+include_once './../../config/core.php';
+
+// Objects class
+include_once './../../objects/product.php';
+include_once './../../objects/category.php';
   
 // get database connection
 $database = new Database();
@@ -14,10 +17,10 @@ $category = new Category($db);
 
 // set page headers
 $page_title = "Create Product";
-include_once "layout_header.php";
+include_once "./../layouts/header.php";
   
 echo "<div class='right-button-margin'>
-        <a href='index.php' class='btn btn-default pull-right'>Home Page</a>
+        <a href='index.php' class='btn btn-default pull-right m-r-1em m-b-1em'>Home Page</a>
     </div>";
 
     if($_POST) {
@@ -92,5 +95,5 @@ echo "<div class='right-button-margin'>
     <?php
   
 // footer
-include_once "layout_footer.php";
+include_once "./../layouts/footer.php";
 ?>
