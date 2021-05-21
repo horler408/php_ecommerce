@@ -141,6 +141,7 @@
             $this->contact_number = $row['contact_number'];
             $this->address = $row['address'];
             $this->gender_id = $row['gender_id'];
+            $this->image = $row['image'];
     
         }
 

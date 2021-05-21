@@ -1,6 +1,7 @@
 <?php
-// core configuration
+// Core configuration and database
 include_once "./../config/core.php";
+include_once './../config/database.php';
  
 // set page title
 $page_title = "Register";
@@ -9,7 +10,6 @@ $page_title = "Register";
 include_once "./auth_checker.php";
  
 // include classes
-include_once './../config/database.php';
 include_once './../objects/user.php';
 include_once './../objects/gender.php';
 include_once "./../libs/php/utils.php";
@@ -81,7 +81,7 @@ echo "<div class='col-md-12'>";
     }
 
     ?>
-    <form action='register.php' method='post' id='register'>
+    <form action='<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>' method='post' id='register'>
         <table class='table table-responsive'>
             <tr>
                 <td class='width-30-percent'>Firstname</td>

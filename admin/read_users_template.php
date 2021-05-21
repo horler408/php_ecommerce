@@ -42,7 +42,7 @@ if($num>0){
                         // Link to edit a product
                         echo "<a href='./user_crud/update_user.php?id={$id}' class='btn btn-primary m-r-1em m-b-1em'>Edit</a>";
                         // Link to delete a product
-                        echo "<a href='#' onclick='deleteProduct({$id});' class='btn btn-danger m-b-1em'>Delete</a>";
+                        echo "<a href='#' delete-id='{$id}' class='btn btn-danger delete-object m-b-1em'>Delete</a>";
                     echo "</td>";
             echo "</tr>";
             }

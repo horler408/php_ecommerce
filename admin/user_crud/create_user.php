@@ -1,17 +1,25 @@
 <?php
-// core configuration
+// Core configuration and database
 include_once "./../../config/core.php";
+include_once './../../config/database.php';
  
-// set page title
+// To set page title
 $page_title = "Create User";
  
 // include login checker
 include_once "./../auth_checker.php";
  
 // include classes
-include_once './../../config/database.php';
 include_once './../../objects/user.php';
-include_once "./../../libs/php/utils.php";
+include_once './../../objects/gender.php';
+
+// Database connection
+$database = new Database();
+$db = $database->getConnection();
+
+// Objects initialisation
+$user = new User($db);
+$gender = new Gender($db);
  
 // include page header HTML
 include_once "./../layouts/header.php";
@@ -32,13 +40,13 @@ echo "<div class='col-md-12'>";
         // To check if email already exists
         if($user->emailExists()){
             echo "<div class='alert alert-danger'>";
-                echo "The email you specified is already registered. Please try again or <a href='{$home_url}login'>login.</a>";
+                echo "The email you specified is already registered. Please try again or <a href='{$home_url}users/login.php'>login.</a>";
             echo "</div>";
         }
     
         else{
-            $user->firstname=$_POST['firstname'];
-            $user->lastname=$_POST['lastname'];
+            $user->first_name=$_POST['first_name'];
+            $user->last_name=$_POST['last_name'];
             $user->contact_number=$_POST['contact_number'];
             $user->address=$_POST['address'];
             $user->password=$_POST['password'];
@@ -48,7 +56,7 @@ echo "<div class='col-md-12'>";
             if($user->create()){
             
                 echo "<div class='alert alert-info'>";
-                    echo "Successfully registered. <a href='{$home_url}login'>Please login</a>.";
+                    echo "Successfully registered. <a href='{$home_url}users/login.php'>Please login</a>.";
                 echo "</div>";
             
                 // empty posted values
@@ -61,7 +69,7 @@ echo "<div class='col-md-12'>";
     }
 
     ?>
-    <form action='register.php' method='post' id='register'>
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method='post' id='register'>
         <table class='table table-responsive'>
             <tr>
                 <td class='width-30-percent'>Firstname</td>
@@ -86,6 +94,24 @@ echo "<div class='col-md-12'>";
             <tr>
                 <td>Email</td>
                 <td><input type='email' name='email' class='form-control' required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : "";  ?>" /></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <?php
+                    $stmt = $gender->read();
+                    
+                    echo "<select name='gender_id' class='form-control'>";
+                        echo "<option>Select gender...</option>";
+
+                        while($row_gender = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            extract($row_gender);
+                            echo "<option value='{$id}'>{$name}</option>";
+                        }
+                    echo "</select>";
+                    ?>
+                </td>
             </tr>
     
             <tr>
