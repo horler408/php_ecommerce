@@ -17,7 +17,7 @@ $(document).on('click', '.delete-object', function(){
     var id = $(this).attr('delete-id');
   
     bootbox.confirm({
-        message: "<h4>Are you sure you want to delete this user?</h4>",
+        message: "<h4>Are you sure you want to delete this item?</h4>",
         buttons: {
             confirm: {
                 label: '<span class="glyphicon glyphicon-ok"></span> Yes',

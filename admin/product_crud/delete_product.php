@@ -1,7 +1,7 @@
 <?php 
     if($_POST) {
-        include_once "./config/database.php";
-        include_once "./objects/product.php";
+        include_once "./../../config/database.php";
+        include_once "./../../objects/product.php";
 
         // Database connection
         $database = new Database();

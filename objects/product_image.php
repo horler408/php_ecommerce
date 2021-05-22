@@ -44,5 +44,10 @@
         
             return $stmt;
         }
+
+        function create() {
+            $query = "INSERT INTO " . $this->table_name . " 
+                    SET name:name, ";
+        }
     }
 ?>

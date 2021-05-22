@@ -1,8 +1,11 @@
 <?php
 $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
   
-// include database and object files
+// To include database and core configuration
 include_once './../../config/database.php';
+include_once './../../config/core.php';
+
+// To include object classes
 include_once './../../objects/product.php';
 include_once './../../objects/category.php';
   
@@ -30,7 +33,6 @@ echo "<div class='right-button-margin'>
 
     if($_POST){
   
-        // set product property values
         $product->name = $_POST['name'];
         $product->price = $_POST['price'];
         $product->description = $_POST['description'];
@@ -40,7 +42,7 @@ echo "<div class='right-button-margin'>
         ? sha1_file($_FILES['image']['tmp_name']) . "-" . basename($_FILES["image"]["name"]) : "";
         $product->image = $image;
       
-        // update the product
+        // To make a call to update function
         if($product->update()){
             echo "<div class='alert alert-success alert-dismissable'>";
                 echo "Product was updated.";
@@ -80,7 +82,6 @@ echo "<div class='right-button-margin'>
                     <?php
                     $stmt = $category->read();
                     
-                    // put them in a select drop-down
                     echo "<select class='form-control' name='category_id'>";
                     
                         echo "<option>Please select...</option>";
@@ -89,7 +90,7 @@ echo "<div class='right-button-margin'>
                             $category_name = $row_category['name'];
                     
                             // current category of the product must be selected
-                            if($product->category_id==$category_id){
+                            if($product->category_id == $category_id){
                                 echo "<option value='$category_id' selected>";
                             }else{
                                 echo "<option value='$category_id'>";

@@ -33,5 +33,5 @@ echo "<div class='col-md-12'>";
 echo "</div>";
 
 // To set page footer
-include_once "./layouts/footer.php";
+include_once "./../layouts/footer.php";
 ?>
