@@ -21,6 +21,9 @@
                 <li <?php echo $page_title=="Dashboard" ? "class='active'" : ""; ?>>
                     <a href="<?php echo $home_url; ?>">Home</a>
                 </li>
+                <li <?php echo $page_title=="Products" ? "class='active'" : ""; ?>>
+                    <a href="<?php echo $home_url; ?>products/products.php">Products</a>
+                </li>
             </ul>
  
             <?php
@@ -48,13 +51,13 @@
                     ?>
                     <ul class="nav navbar-nav navbar-right">
                         <li <?php echo $page_title=="Login" ? "class='active'" : ""; ?>>
-                            <a href="<?php echo $home_url; ?>users/login">
+                            <a href="<?php echo $home_url; ?>users/login.php">
                                 <span class="glyphicon glyphicon-log-in"></span> Log In
                             </a>
                         </li>
                     
                         <li <?php echo $page_title=="Register" ? "class='active'" : ""; ?>>
-                            <a href="<?php echo $home_url; ?>users/register">
+                            <a href="<?php echo $home_url; ?>users/register.php">
                                 <span class="glyphicon glyphicon-check"></span> Register
                             </a>
                         </li>

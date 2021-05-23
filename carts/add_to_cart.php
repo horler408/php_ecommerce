@@ -1,4 +1,15 @@
-<?php 
+<?php
+include_once "./../config/core.php";
+
+// include login checker
+$require_login=true;
+include_once "./../users/auth_checker.php";
+
+// To set page title
+$page_title="Add Cart";
+
+include "./../layouts.header.php";
+
 $id = isset($_GET['id']) ? $_GET['id'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : 1;
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -48,4 +59,6 @@ else{
     header('Location: ./../products/product.php?id=' . $id . '&action=added');
 }
 die();
+
+include "./../layouts.footer.php";
 ?>

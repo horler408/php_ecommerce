@@ -1,4 +1,5 @@
 <?php
+session_start();
 // core configuration
 include_once "config/core.php";
  

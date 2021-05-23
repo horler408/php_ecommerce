@@ -36,6 +36,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
  
     echo "</div>";
 }
- 
+
 include_once "./../components/paging.php";
 ?>
